@@ -1,0 +1,160 @@
+{
+  "app_name": "HaathKala",
+  "personality": "Structure of 4 Tactile / Playful with Color/Typography of 8 Hand-Drawn / Journal",
+  "personality_one_liner": "An earthy, tactile, and highly accessible marketplace celebrating Indian heritage and empowering rural artisans through extreme simplicity.",
+  "color": {
+    "surface": "#FDFBF7",
+    "onSurface": "#2B2521",
+    "surfaceSecondary": "#F4EFE6",
+    "onSurfaceSecondary": "#3A332E",
+    "surfaceTertiary": "#EAE3D6",
+    "onSurfaceTertiary": "#48403A",
+    "surfaceInverse": "#2B2521",
+    "onSurfaceInverse": "#FDFBF7",
+    "brand": "#C85A32",
+    "brandPrimary": "#C85A32",
+    "onBrandPrimary": "#FFFFFF",
+    "brandSecondary": "#ECA53D",
+    "onBrandSecondary": "#2B2521",
+    "brandTertiary": "#2B3A67",
+    "onBrandTertiary": "#FFFFFF",
+    "success": "#4A7C59",
+    "onSuccess": "#FFFFFF",
+    "warning": "#ECA53D",
+    "onWarning": "#2B2521",
+    "error": "#B23A48",
+    "onError": "#FFFFFF",
+    "info": "#2B3A67",
+    "onInfo": "#FFFFFF",
+    "border": "#D8D0C5",
+    "borderStrong": "#A69B8E",
+    "divider": "#EAE3D6"
+  },
+  "typography": {
+    "displayFontFamily": "Fraunces",
+    "textFontFamily": "Plus Jakarta Sans",
+    "scale": {
+      "sm": 14,
+      "base": 16,
+      "lg": 18,
+      "xl": 24,
+      "2xl": 32
+    }
+  },
+  "spacing": {
+    "rule": "Generous spacing and oversized tap targets (minimum 56pt) are critical for rural accessibility. Ensure chunky padding inside cards.",
+    "xs": 8,
+    "sm": 12,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "2xl": 48,
+    "3xl": 64
+  },
+  "radius_tokens": {
+    "sm": 12,
+    "md": 20,
+    "lg": 24,
+    "pill": 999
+  },
+  "shadow_tier": "2",
+  "navigation": "bottom_tabs",
+  "icon_set": "Phosphor",
+  "glassmorphism": {
+    "enabled": false,
+    "do's": [
+      "Use solid surfaceSecondary for sticky headers or bottom tabs to maintain high contrast and clarity for elderly/non-tech users."
+    ],
+    "dont's": [
+      "No blur or glassmorphism. It reduces readability and contrast for rural/non-tech users."
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "solid surfaceSecondary",
+      "android": "solid surfaceSecondary",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Onboarding",
+      "purpose": "Language selection and Role selection (Buyer vs. Artisan) using large, highly visual tap areas.",
+      "states": {
+        "loading": "Centered earthy terracotta spinner.",
+        "empty": "N/A",
+        "error": "Clear text alert with 'Try Again' button."
+      },
+      "layout": "Linear navigation wizard. First screen: Language selection grid (Devanagari, Tamil, etc.). Second screen: Split layout with two massive cards ('I want to Buy', 'I want to Sell') utilizing photos and iconography. Touch targets must be massive."
+    },
+    {
+      "name": "BuyerHome",
+      "purpose": "A visually rich, story-driven feed showcasing featured artisans and craft categories.",
+      "states": {
+        "loading": "Skeleton loaders using surfaceSecondary.",
+        "empty": "Illustration of a marketplace with text 'No crafts found' and a 'Refresh' button.",
+        "error": "Error message with an oversized 'Retry' button."
+      },
+      "layout": "Vertical scroll. Top: Sticky search bar. Next: Horizontal scrolling pill filters for categories (Pottery, Textiles, etc.). Body: Large hero cards featuring artisan photos (not just products). Cards use progressive reveal storytelling—showing the artisan working, with a gradient scrim at the bottom containing the title and 'View Story' CTA."
+    },
+    {
+      "name": "ProductDetail",
+      "purpose": "Showcase the product, tell the artisan's story, and facilitate WhatsApp contact.",
+      "states": {
+        "loading": "Spinner over image placeholder.",
+        "empty": "Product unavailable message.",
+        "error": "Failed to load product details."
+      },
+      "layout": "Top half: Edge-to-edge product carousel. Bottom half: Large, legible text block detailing the craft's story, origin, and the artisan's profile. At the bottom root: Sticky 'Contact Seller on WhatsApp' CTA (brandPrimary) filling the width with safe area clearance."
+    },
+    {
+      "name": "ArtisanDashboard",
+      "purpose": "Extremely simple hub for the artisan to manage listings and see inquiries.",
+      "states": {
+        "loading": "Centered spinner.",
+        "empty": "Illustration of empty shelf with 'Add your first craft' CTA.",
+        "error": "Error loading dashboard."
+      },
+      "layout": "Minimalist grid. Top: Massive 'Add Product using AI Magic' card spanning full width. Below: Large list items for 'My Crafts' and 'Messages'. Avoid complex metrics; use simple conversational status (e.g., '3 people asked about this')."
+    },
+    {
+      "name": "AIProductScanner",
+      "purpose": "Step-by-step camera upload flow where AI auto-extracts product details to eliminate typing.",
+      "states": {
+        "loading": "Lottie animation of 'AI analyzing photo' with text 'Creating your product story...'",
+        "empty": "N/A",
+        "error": "Couldn't detect product. 'Retake Photo' primary button."
+      },
+      "layout": "Capture Flow: Camera viewfinder with an overlay guide. Once snapped, AI extraction results appear in a chunked, easy-to-read list (Generated Name, Suggested Price, Story). Large 'Confirm' or 'Edit with Voice' buttons. Voice input is prioritized over text fields."
+    }
+  ],
+  "images": {
+    "pottery_category": {
+      "url": "https://images.unsplash.com/photo-1635175994617-1a9d85cdf680?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxoYW5kbWFkZSUyMGluZGlhbiUyMHBvdHRlcnklMjB0ZXJyYWNvdHRhfGVufDB8fHx8MTc4NzkzMDI0Nnww&ixlib=rb-4.1.0&q=85",
+      "alt": "handmade indian pottery terracotta"
+    },
+    "textile_category": {
+      "url": "https://images.unsplash.com/photo-1660845683010-63e7422420b9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBoYW5kaWNyYWZ0JTIwdGV4dGlsZSUyMHBhdHRlcm58ZW58MHx8fHwxNzg3OTMwMjQ2fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "indian handicraft textile pattern"
+    },
+    "artisan_hero": {
+      "url": "https://images.unsplash.com/photo-1721508490084-1b1de5b230d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBhcnRpc2FuJTIwd29ya2luZyUyMGNyYWZ0fGVufDB8fHx8MTc4NzkzMDI2MHww&ixlib=rb-4.1.0&q=85",
+      "alt": "indian artisan working craft"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Design with extreme accessibility in mind: minimum touch targets of 56pt, large base font size (16pt), and high contrast (7:1).",
+    "Disable glassmorphism completely. Use solid, earthy tones (surfaceSecondary/surfaceTertiary) to maintain legibility for non-tech-savvy users.",
+    "Implement the 'Sticky CTA' pattern on scrollable screens, specifically the WhatsApp contact button on the Buyer's product detail page.",
+    "Whenever placing text over images (like on the artisan hero cards), MUST use a 3-stop vertical gradient scrim (transparent to surfaceInverse) to guarantee readability.",
+    "Prioritize visual storytelling over data grids: use large photos of artisans and products.",
+    "For the artisan flow, replace standard forms with AI-assisted voice and photo uploads. Use oversized pill buttons for interactions.",
+    "Ensure the typography scale caters well to regional Indian languages (Devanagari, Tamil, etc.) with proper line heights.",
+    "Use Phosphor icons filled/outlined uniformly, avoiding any complex SVGs or emojis in the UI."
+  ]
+}

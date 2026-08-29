@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "HaathKala",
+    "slug": "frontend",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "frontend",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.emergent.villagecrafts.mvm5tv",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Take photos of your handmade crafts",
+        "NSPhotoLibraryUsageDescription": "Choose photos of your handmade crafts",
+        "NSMicrophoneUsageDescription": "Describe your craft in your language"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#FDFBF7"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.emergent.villagecrafts.mvm5tv",
+      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE", "RECORD_AUDIO"]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-image.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#FDFBF7"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Choose photos of your handmade crafts",
+          "cameraPermission": "Take photos of your handmade crafts"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

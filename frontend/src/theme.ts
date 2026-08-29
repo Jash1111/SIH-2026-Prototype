@@ -1,0 +1,56 @@
+export const theme = {
+  colors: {
+    surface: "#FDFBF7",
+    onSurface: "#2B2521",
+    surfaceSecondary: "#F4EFE6",
+    onSurfaceSecondary: "#3A332E",
+    surfaceTertiary: "#EAE3D6",
+    onSurfaceTertiary: "#48403A",
+    surfaceInverse: "#2B2521",
+    onSurfaceInverse: "#FDFBF7",
+    brand: "#C85A32",
+    brandPrimary: "#C85A32",
+    onBrandPrimary: "#FFFFFF",
+    brandSecondary: "#ECA53D",
+    onBrandSecondary: "#2B2521",
+    brandTertiary: "#2B3A67",
+    onBrandTertiary: "#FFFFFF",
+    success: "#4A7C59",
+    warning: "#ECA53D",
+    error: "#B23A48",
+    info: "#2B3A67",
+    border: "#D8D0C5",
+    borderStrong: "#A69B8E",
+    divider: "#EAE3D6",
+    whatsapp: "#25D366",
+  },
+  spacing: {
+    xs: 8,
+    sm: 12,
+    md: 16,
+    lg: 24,
+    xl: 32,
+    xxl: 48,
+    xxxl: 64,
+  },
+  radius: {
+    sm: 12,
+    md: 20,
+    lg: 24,
+    pill: 999,
+  },
+  font: {
+    display: "System", // will render Fraunces if loaded; safe fallback for now
+    text: "System",
+  },
+  size: {
+    sm: 14,
+    base: 16,
+    lg: 18,
+    xl: 24,
+    xxl: 32,
+    xxxl: 40,
+  },
+};
+
+export type Theme = typeof theme;
